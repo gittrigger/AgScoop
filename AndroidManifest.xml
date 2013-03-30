@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.fightind.agscoop"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:label="@string/app_name" android:icon="@drawable/clicker">
+        <activity android:name=".Motion"
+                  android:label="@string/app_name" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:multiprocess="true" process=":motion">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    	<activity android:name="Lookup" android:label="Lookup" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:multiprocess="true" process=":lookup" />
+    	<service android:name=".AutomaticService" android:enabled="true" android:multiprocess="true" process=":automaticservice"/>
+    	<provider android:name="DataProvider" android:authorities="com.fightind.agscoop" android:multiprocess="true" process="dataprovider" />
+    	<receiver android:name=".IntentReceiver" android:process=":newsbiteintent" android:enabled="true" android:exported="true" android:multiprocess="true">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+				<action android:name="com.havenskys.newsbite.SERVICE_RECOVER3" />
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<action android:name="android.intent.action.SERVICE_STATE" />
+				<action android:name="android.intent.action.ACTION_SYNC" />
+			</intent-filter>
+		</receiver>
+    </application>
+    <uses-sdk android:minSdkVersion="3" />
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+<uses-permission android:name="android.permission.WRITE_SETTINGS"></uses-permission>
+<uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
+<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+<uses-permission android:name="android.permission.BATTERY_STATS"></uses-permission>
+
+<uses-permission android:name="android.permission.ADD_SYSTEM_SERVICE"></uses-permission>
+<uses-permission android:name="android.permission.SET_ORIENTATION"></uses-permission>
+
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+<uses-permission android:name="android.permission.RECEIVE_WAP_PUSH"></uses-permission>
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+
+</manifest> 

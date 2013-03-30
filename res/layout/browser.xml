@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:background="#A0000000" android:padding="3px" android:id="@+id/browser">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/browser_title" android:text="Title" android:textSize="32px" android:textScaleX="0.6" android:textColor="#3FaF5F" android:visibility="visible"></TextView>
+
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingLeft="12px" android:paddingBottom="32px" android:paddingRight="12px" >
+<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/browser_date" android:text="Date" android:textSize="12px" android:textColor="#000000" android:background="#FFFFFF" android:paddingRight="3px" android:paddingLeft="5px" android:paddingBottom="10px" android:visibility="gone"></TextView>
+
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:padding="3px" android:background="#A0005020" >
+<WebView android:id="@+id/browser_viewer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1" android:visibility="gone"
+    />
+</LinearLayout>    
+
+</RelativeLayout> 
+
+</LinearLayout>
+<ImageView android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:id="@+id/browser_overback" android:scaleType="matrix" android:src="@drawable/overback" android:layout_width="40px" android:layout_height="50px" />
+</RelativeLayout>
